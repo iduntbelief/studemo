@@ -4,3 +4,4 @@ Studemo::Application.routes.draw do
   match "students/createStudent" => "students#createStudent"
   get "students/index"
 end
+

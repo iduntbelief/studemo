@@ -10,7 +10,7 @@ class StudentsController < ApplicationController
   end
   def createStudent
     fn = params[:first_name]
-    fn = params[:last_name]
+    ln = params[:last_name]
     maj = params[:major]
     @student = Student.new(:first_name => fn,
       :last_name => ln, :major => maj)
