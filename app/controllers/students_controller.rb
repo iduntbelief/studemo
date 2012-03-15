@@ -28,14 +28,11 @@ class StudentsController < ApplicationController
   end
   def editStudent
     id = params[:student_id]
-    @student = Student.find_by_id(id)
-    if @student.edit
-      fn = params[:first_name]
-      ln = params[:last_name]
-      maj = params[:major]
-      @student = Student.new(:first_name => fn,
-        :last_name => ln, :major => maj)
-      @student.save
-    end  
+    fn = params[:first_name]
+    ln = params[:last_name]
+    maj = params[:major]
+    @student= Student.find_by_id(id).update_attributes(:first_name => fn,
+      :last_name => ln, :major => maj)
+    @student.save
   end
 end
